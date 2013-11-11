@@ -1,2 +1,4 @@
-Common
-======
+NodePub Common
+==============
+
+Shared utility classes.

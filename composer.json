@@ -1,0 +1,16 @@
+{
+    "name": "nodepub/common",
+    "description": "Common utility classes",
+    "keywords": ["yaml", "filesystem"],
+    "license": "MIT",
+    "authors": [
+        {"name": "Andrew Gruner", "email": "andrew.gruner@gmail.com"}
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/filesystem": "~2.3",
+        "symfony/yaml": "~2.3",
+        "doctrine/common" : ">= 2.3.0, < 2.4.0-beta"
+    }
+}
