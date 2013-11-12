@@ -10,6 +10,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class YamlCollectionLoader
 {
+    const EXT_YML = 'yml';
+    
     protected $sourceDirs = array();
     
     function __construct($sourceDirs)
@@ -42,7 +44,11 @@ class YamlCollectionLoader
     public function load($name)
     {
         foreach ($this->sourceDirs as $dir) {
-            $yamlFile = $dir.'/'.$name.'.yml';
+            $yamlFile = $dir.'/'.$name;
+            
+            if (false === strstr($yamlFile, '.'.self::EXT_YML)) {
+                $yamlFile .= '.'.self::EXT_YML;
+            }
             
             if (is_file($yamlFile)) {
                 return new ArrayCollection(Yaml::parse($yamlFile));
