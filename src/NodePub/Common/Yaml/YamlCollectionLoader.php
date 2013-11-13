@@ -44,7 +44,12 @@ class YamlCollectionLoader
     public function load($name)
     {
         foreach ($this->sourceDirs as $dir) {
-            $yamlFile = $dir.'/'.$name;
+            
+            if (0 == strpos(DIRECTORY_SEPARATOR, $name)) {
+                $yamlFile = $name;
+            } else {
+                $yamlFile = $dir.'/'.$name;
+            }
             
             if (false === strstr($yamlFile, '.'.self::EXT_YML)) {
                 $yamlFile .= '.'.self::EXT_YML;
