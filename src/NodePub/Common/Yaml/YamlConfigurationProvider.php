@@ -1,6 +1,6 @@
 <?php
 
-namespace NodePub\Common\Config;
+namespace NodePub\Common\Yaml;
 
 use Symfony\Component\Yaml\Yaml;
 
