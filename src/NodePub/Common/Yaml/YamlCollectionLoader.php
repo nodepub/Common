@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class YamlCollectionLoader
 {
-    const EXT_YML = 'yml';
+    const EXT_YML = '.yml';
     
     protected $sourceDirs = array();
     
@@ -45,14 +45,14 @@ class YamlCollectionLoader
     {
         foreach ($this->sourceDirs as $dir) {
             
-            if (0 == strpos(DIRECTORY_SEPARATOR, $name)) {
+            if (0 === strpos($name, DIRECTORY_SEPARATOR)) {
                 $yamlFile = $name;
             } else {
-                $yamlFile = $dir.'/'.$name;
+                $yamlFile = $dir . '/' . $name;
             }
             
-            if (false === strstr($yamlFile, '.'.self::EXT_YML)) {
-                $yamlFile .= '.'.self::EXT_YML;
+            if (false === strstr($yamlFile, self::EXT_YML)) {
+                $yamlFile .= self::EXT_YML;
             }
             
             if (is_file($yamlFile)) {
@@ -60,6 +60,6 @@ class YamlCollectionLoader
             }
         }
         
-        throw new \Exception("No Yaml file found");
+        throw new \Exception(sprintf('No Yaml file found for {%s}', $name));
     }
 }

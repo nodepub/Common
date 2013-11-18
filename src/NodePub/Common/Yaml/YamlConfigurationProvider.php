@@ -3,11 +3,12 @@
 namespace NodePub\Common\Yaml;
 
 use Symfony\Component\Yaml\Yaml;
+use NodePub\Common\Config\ConfigurationProviderInterface;
 
 /**
  * Loads and saves settings to a yaml file
  */
-class YamlConfigurationProvider
+class YamlConfigurationProvider implements ConfigurationProviderInterface
 {
     protected $filePath,
               $config,
