@@ -34,7 +34,8 @@ class TaggedCollection extends ArrayCollection
                     if (!in_array($tagging, array_keys($item['tags']))) {
                         $this->taggings[$tagging] = array();
                     }
-                    $this->taggings[$tagging][] = $slug;
+                    
+                    $this->taggings[$tagging][] = $key;
                 }
             }
         }
