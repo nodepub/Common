@@ -1,10 +1,11 @@
 <?php
 
-namespace NodePub\Core\Trait;
+namespace NodePub\Common\Trait;
 
 use Symfony\Component\Finder\Finder;
 
-trait SourceDirectoryAwareTrait {
+trait SourceDirectoryAwareTrait
+{
     
     /**
      * @var array
