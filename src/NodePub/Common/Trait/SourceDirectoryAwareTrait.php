@@ -23,10 +23,8 @@ trait SourceDirectoryAwareTrait {
         
         if (is_dir($sourcePath)) {
             $this->sourceDirs[] = $sourcePath;
-        } else {
-            if (true === $useStrict) {
-                throw new \Exception(sprintf('Path {%s} is not a readable directory', $sourcePath));
-            }
+        } elseif (true === $useStrict) {
+            throw new \Exception(sprintf('Path {%s} is not a readable directory', $sourcePath));
         }
         
         return $this;
