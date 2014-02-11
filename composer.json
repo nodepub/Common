@@ -12,6 +12,7 @@
         "php": ">=5.3.3",
         "doctrine/common"    : ">= 2.3.0, < 2.4.0-beta",
         "symfony/filesystem" : "~2.3",
+        "symfony/finder"     : "~2.3",
         "symfony/yaml"       : "~2.3"
     },
     "autoload": {
