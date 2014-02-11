@@ -1,17 +1,11 @@
 <?php
 
-namespace NodePub\Common\Trait;
+namespace NodePub\Common;
 
 use Symfony\Component\Finder\Finder;
 
 interface SourceDirectoryAwareInterface
 {
-    
-    /**
-     * @var array
-     */
-    protected $sourceDirs;
-    
     /**
      * Adds a source directory
      */
@@ -20,5 +14,5 @@ interface SourceDirectoryAwareInterface
     /**
      * Searches source directories for criteria in given Finder
      */
-    protected function findInSourceDirs(Finder $finder);
+     public function findInSourceDirs(Finder $finder);
 }

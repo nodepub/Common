@@ -1,12 +1,11 @@
 <?php
 
-namespace NodePub\Common\Trait;
+namespace NodePub\Common;
 
 use Symfony\Component\Finder\Finder;
 
 trait SourceDirectoryAwareTrait
 {
-    
     /**
      * @var array
      */
@@ -36,7 +35,7 @@ trait SourceDirectoryAwareTrait
      *
      * @return Finder
      */
-    protected function findInSourceDirs(Finder $finder)
+    public function findInSourceDirs(Finder $finder)
     {
         foreach ($this->sourceDirs as $dir) {
             $finder->in($dir);
